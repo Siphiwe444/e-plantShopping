@@ -258,8 +258,13 @@ function ProductList({ onHomeClick }) {
 
     const handleContinueShopping = (e) => {
         e.preventDefault();
-        setShowCart(false);
+        setShowCart(false); 
+        
+        if (onContinueShopping) {
+            onContinueShopping(); 
+        }
     };
+
 
     const handleAddToCart = (plant) => {
         const costNumber = Number(plant.cost.replace('$', ''));
